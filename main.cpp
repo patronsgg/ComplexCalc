@@ -11,14 +11,35 @@ int main(){
     c.getNum();
     Complex d = first - second;
     d.getNum();
-    ifstream file("E:\\yandex\\oopproject\\complex.txt");
+
+
+    ifstream file("complex.txt");
     string temp;
     getline(file, temp);
     int n = stoi(temp);
+    cout << n << endl;
+    int x, y;
+    float max_module = -100000;
+    Complex maximum;
     Complex *p = new Complex [n];
-    while (file) {
-        getline(file, temp);
-
+    for (int i = 0; i < n; i++)
+    {
+        file >> x >> y;
+        Complex temp_second(x, y);
+        p[i] = temp_second;
     }
+    file.close();
+
+    for (int i = 0; i < n; i++)
+    {
+        if (p[i].module() > max_module)
+        {
+            max_module = p[i].module();
+            maximum = p[i];
+        }
+    }
+    cout << "Maximum module: " << max_module << endl;
+    cout << "Complex num: ";
+    maximum.getNum();
     return 0;
 };

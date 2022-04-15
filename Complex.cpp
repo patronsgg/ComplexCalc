@@ -1,4 +1,4 @@
-#include "Classes.h"
+#include "Complex.h"
 
 Complex::Complex(float real_num, float imaginary_num)
 {
@@ -8,7 +8,7 @@ Complex::Complex(float real_num, float imaginary_num)
 
 float Complex::module()
 {
-    return (this->real * this->real + this->imaginary * this->imaginary);
+    return sqrt((this->real * this->real + this->imaginary * this->imaginary));
 };
 
 void Complex::getNum()
