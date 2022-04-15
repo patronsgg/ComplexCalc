@@ -1,5 +1,3 @@
-#include <iostream>
-using namespace std;
 #include "Classes.h"
 
 Complex::Complex(float real_num, float imaginary_num)
@@ -7,6 +5,11 @@ Complex::Complex(float real_num, float imaginary_num)
     real = real_num;
     imaginary = imaginary_num;
 }
+
+float Complex::module()
+{
+    return (this->real * this->real + this->imaginary * this->imaginary);
+};
 
 void Complex::getNum()
 {

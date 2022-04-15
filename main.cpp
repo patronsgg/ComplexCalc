@@ -1,4 +1,4 @@
-#include "Classes.h"
+#include "Complex.h"
 
 
 int main(){
@@ -11,5 +11,14 @@ int main(){
     c.getNum();
     Complex d = first - second;
     d.getNum();
+    ifstream file("E:\\yandex\\oopproject\\complex.txt");
+    string temp;
+    getline(file, temp);
+    int n = stoi(temp);
+    Complex *p = new Complex [n];
+    while (file) {
+        getline(file, temp);
+
+    }
     return 0;
 };
